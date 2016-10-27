@@ -1,0 +1,3 @@
+#! /bin/bash
+
+i3-msg 'workspace 10:  Music; exec firefox -new-tab -url https://www.youtube.com -new-tab -url http://play.spotify.com/browse'

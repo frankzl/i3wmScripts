@@ -1,0 +1,9 @@
+#! /bin/bash
+
+resolution="$(xrandr  | grep \* | cut -d' ' -f4)"
+resolution=$(echo ${resolution} | tr 'x' '\n')
+arr=($resolution)
+echo "fdaf" ${arr[0]}
+echo "fdaf" ${arr[1]}
+i3-msg "floating enable"
+i3-msg "move position $1 $2"

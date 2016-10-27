@@ -1,0 +1,13 @@
+#! /bin/bash
+
+resolution="$(xrandr  | grep \* | cut -d' ' -f4)"
+resolution=$(echo ${resolution} | tr 'x' '\n')
+arr=($resolution)
+
+i3-msg "floating enable"
+
+xPos=$(($1*${arr[0]}/100))
+yPos=$(($2*${arr[1]}/100))
+
+i3-msg "move position $xPos $yPos"
+
